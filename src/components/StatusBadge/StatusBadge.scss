@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+.status-badge {
+  display: inline-flex;
+  min-width: 86px;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1;
+
+  &--active {
+    background: rgba(57, 205, 98, 0.1);
+    color: $success;
+  }
+
+  &--inactive {
+    background: rgba(84, 95, 125, 0.1);
+    color: $text;
+  }
+
+  &--pending {
+    background: rgba(233, 178, 0, 0.1);
+    color: $warning;
+  }
+
+  &--blacklisted {
+    background: rgba(228, 3, 59, 0.1);
+    color: $danger;
+  }
+}

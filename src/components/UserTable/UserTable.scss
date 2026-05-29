@@ -1,0 +1,154 @@
+@use '../../styles/variables' as *;
+
+.users-table-card {
+  position: relative;
+  padding: 10px 20px 24px;
+  overflow: visible;
+}
+
+.users-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 18px 10px;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    color: $text;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    color: $text;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      text-transform: inherit;
+    }
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  &__actions-cell {
+    position: relative;
+    width: 40px;
+  }
+
+  &__menu-button {
+    border: 0;
+    background: transparent;
+    color: $text;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 50px;
+    right: 8px;
+    z-index: 15;
+    width: 180px;
+    padding: 12px 0;
+    background: $white;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    border-radius: 4px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+    a,
+    button {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 0;
+      background: transparent;
+      color: $text;
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+}
+
+.users-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  color: $text;
+  font-size: 14px;
+
+  &__select {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    select {
+      height: 30px;
+      padding: 0 8px;
+      border: 0;
+      border-radius: 4px;
+      background: rgba(33, 63, 125, 0.1);
+      color: $secondary;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    button {
+      min-width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: $text;
+
+      &:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__arrow {
+    background: rgba(33, 63, 125, 0.1) !important;
+    color: $secondary !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .users-table-card {
+    padding: 4px 12px 18px;
+  }
+
+  .users-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

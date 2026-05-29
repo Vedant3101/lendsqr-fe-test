@@ -1,0 +1,202 @@
+@use '../../styles/variables' as *;
+
+.login-page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: $white;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 70px 70px 95px;
+  }
+
+  &__logo {
+    width: 174px;
+
+    &--hero {
+      position: absolute;
+      top: 80px;
+      left: 95px;
+    }
+
+    &--form {
+      display: none;
+    }
+  }
+
+  &__illustration {
+    position: relative;
+    width: min(600px, 90%);
+    height: 340px;
+    margin-top: 64px;
+    background: linear-gradient(135deg, rgba(57, 205, 204, 0.14), rgba(33, 63, 125, 0.04));
+    border-radius: 24px;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+    }
+
+    &::before {
+      width: 170px;
+      height: 170px;
+      right: 70px;
+      bottom: 50px;
+      background: #f55f44;
+      opacity: 0.75;
+    }
+
+    &::after {
+      width: 210px;
+      height: 210px;
+      left: 60px;
+      top: 56px;
+      background: #39cdcc;
+      opacity: 0.55;
+    }
+  }
+
+  &__screen {
+    position: absolute;
+    top: 86px;
+    left: 80px;
+    z-index: 2;
+    width: 320px;
+    height: 180px;
+    border-radius: 14px;
+    background: $white;
+    box-shadow: 0 20px 40px rgba(33, 63, 125, 0.12);
+
+    &::before {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 190px;
+      height: 14px;
+      border-radius: 20px;
+      background: rgba(33, 63, 125, 0.12);
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 62px;
+      left: 24px;
+      width: 250px;
+      height: 70px;
+      border-radius: 12px;
+      background: repeating-linear-gradient(90deg, rgba(57, 205, 204, 0.35), rgba(57, 205, 204, 0.35) 22px, rgba(33, 63, 125, 0.1) 22px, rgba(33, 63, 125, 0.1) 44px);
+      content: '';
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-shadow: 0 15px 90px rgba(0, 0, 0, 0.03);
+  }
+
+  &__form-wrap {
+    width: min(100%, 447px);
+  }
+
+  h1 {
+    margin: 0 0 10px;
+    color: $secondary;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  p {
+    margin: 0 0 60px;
+    color: $text;
+    font-size: 20px;
+  }
+
+  form {
+    display: grid;
+    gap: 24px;
+  }
+
+  &__field {
+    position: relative;
+
+    input {
+      width: 100%;
+      height: 50px;
+      padding: 0 16px;
+      border: 2px solid rgba(84, 95, 125, 0.15);
+      border-radius: 5px;
+      color: $secondary;
+      outline: none;
+
+      &:focus {
+        border-color: $primary;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      border: 0;
+      background: transparent;
+      color: $primary;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__forgot {
+    width: max-content;
+    border: 0;
+    background: transparent;
+    color: $primary;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__submit {
+    width: 100%;
+    height: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+
+    &__left {
+      display: none;
+    }
+
+    &__logo--form {
+      display: block;
+      margin-bottom: 56px;
+      width: 150px;
+    }
+
+    &__right {
+      min-height: 100vh;
+      padding: 28px;
+    }
+
+    p {
+      margin-bottom: 42px;
+    }
+  }
+}

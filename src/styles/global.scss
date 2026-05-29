@@ -1,0 +1,88 @@
+@use './variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: $light-bg;
+  color: $text;
+  font-family: $font;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-title {
+  margin: 0 0 36px;
+  color: $secondary;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card {
+  background: $white;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 4px;
+  box-shadow: $shadow;
+}
+
+.primary-button {
+  border: 0;
+  border-radius: 8px;
+  background: $primary;
+  color: $white;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.outline-button {
+  border: 1px solid $primary;
+  border-radius: 8px;
+  background: transparent;
+  color: $primary;
+  font-weight: 600;
+}
+
+.danger-outline-button {
+  border: 1px solid $danger;
+  border-radius: 8px;
+  background: transparent;
+  color: $danger;
+  font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+}

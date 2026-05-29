@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+
+.dashboard-page {
+  &__hero {
+    padding: 32px;
+    margin-bottom: 28px;
+  }
+
+  h2 {
+    margin: 0 0 8px;
+    color: $secondary;
+    font-size: 22px;
+  }
+
+  p {
+    max-width: 760px;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  &__link {
+    display: inline-flex;
+    margin-top: 18px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: $primary;
+    color: $white;
+    font-weight: 600;
+  }
+}
